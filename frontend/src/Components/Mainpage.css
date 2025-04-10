@@ -1,0 +1,119 @@
+/* Base Styles */
+.healthcare-portal {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8f9fa;
+    /* min-height: 100vh; */
+    height: 90%;
+    width: 94%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.portal-navbar {
+    background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+    color: white;
+    padding: 1.5rem 3rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+.portal-navbar h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Main Container */
+.portal-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.welcome-section h2 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+.welcome-section p {
+    font-size: 1.5rem;
+    color: #7f8c8d;
+    font-weight: 400;
+}
+
+/* Feature Rows */
+.feature-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5rem;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feature-image {
+    width: 47%;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    object-fit:fill;
+    height: 400px;
+}
+
+.feature-content {
+    width: 45%;
+    padding: 0 2rem;
+}
+
+.feature-content h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.feature-content p {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.btn {
+    padding: 1.5rem 3rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5rem !important;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white !important;
+}

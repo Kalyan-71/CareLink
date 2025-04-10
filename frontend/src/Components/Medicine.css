@@ -1,0 +1,271 @@
+:root {
+    --primary: #6c5ce7;
+    --primary-light: #a29bfe;
+    --secondary: #00b894;
+    --dark: #2d3436;
+    --light: #f5f6fa;
+    --gray: #dfe6e9;
+    --danger: #d63031;
+    --border-radius: 12px;
+    --box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .form-container {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .form-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    padding: 2.5rem;
+    position: relative;
+  }
+  
+  .form-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+  }
+  
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .form-header h1 {
+    color: var(--dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  
+  .form-icon {
+    font-size: 2.5rem;
+    transform: rotate(-10deg);
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-10deg); }
+    50% { transform: translateY(-10px) rotate(-10deg); }
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .input-group label {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.95rem;
+  }
+  
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-wrapper input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid var(--gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--light);
+  }
+  
+  .input-wrapper input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 1rem;
+    font-size: 1.2rem;
+    color: var(--primary);
+  }
+  
+  /* Days Selection */
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .day-btn {
+    aspect-ratio: 1;
+    border: 2px solid var(--gray);
+    border-radius: 50%;
+    background: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .day-btn:hover {
+    border-color: var(--primary-light);
+  }
+  
+  .day-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .submit-btn:hover {
+    background: #5649d1;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px -5px rgba(108, 92, 231, 0.6);
+  }
+  
+  .btn-icon {
+    font-size: 1.2rem;
+  }
+  /* Add these styles to your existing CSS */
+
+.interval-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .interval-btn {
+    padding: 0.75rem;
+    border: 2px solid var(--gray);
+    border-radius: var(--border-radius);
+    background: white;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .interval-btn:hover {
+    border-color: var(--primary-light);
+  }
+  
+  .interval-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+  
+  .custom-interval {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .custom-interval input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid var(--gray);
+    border-radius: var(--border-radius);
+  }
+  
+  .interval-label {
+    color: var(--dark);
+    font-weight: 500;
+    min-width: 50px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .interval-options {
+      grid-template-columns: 1fr;
+    }
+  }
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .form-card {
+      padding: 1.5rem;
+    }
+    
+    .days-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .form-header h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Animation for form elements */
+  .form-card {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .input-wrapper input:focus + .input-icon {
+    animation: bounce 0.5s;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
