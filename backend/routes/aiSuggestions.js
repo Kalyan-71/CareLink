@@ -6,7 +6,9 @@ require("dotenv").config();
 const { Translate } = require("@google-cloud/translate").v2;
 
 const apiKey = "AIzaSyBFRICenemxKbj5WwRIyf1HAs-mQWFbaos";
-const translate = new Translate(); // Uses credentials from GOOGLE_APPLICATION_CREDENTIALS
+const translate = new Translate({
+  keyFilename: process.env.GOOGLE_TRANSLATE_CREDENTIALS,
+}); // Uses credentials from GOOGLE_APPLICATION_CREDENTIALS
 
 router.post("/", async (req, res) => {
   const { text, language = "en" } = req.body;
