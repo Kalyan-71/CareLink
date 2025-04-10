@@ -5,7 +5,7 @@ const language = require("@google-cloud/language");
 const client = new language.LanguageServiceClient();
 
 async function analyzeSymptoms(text) {
-  console.log("Analyzing symptoms:", text);
+  // console.log("Analyzing symptoms:", text);
   if (!text || typeof text !== "string") {
     throw new Error("Invalid input: Expected a string.");
   }
@@ -17,7 +17,7 @@ async function analyzeSymptoms(text) {
 
   try {
     const [result] = await client.analyzeEntities({ document });
-    console.log("NLP Result:", result);
+    // console.log("NLP Result:", result);
 
     const entities = result.entities.map((entity) => entity.name.toLowerCase());
 

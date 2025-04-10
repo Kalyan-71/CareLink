@@ -13,8 +13,8 @@ const translate = new Translate({
 router.post("/", async (req, res) => {
   const { text, language = "en" } = req.body;
 
-  console.log("User input:", text);
-  console.log("Target language:", language);
+  // console.log("User input:", text);
+  // console.log("Target language:", language);
 
   const prompt = `I am experiencing ${text}. Please suggest:
 1. Natural remedies to recover.
@@ -34,7 +34,7 @@ Give suggestions in simple bullet points. (Don't use asterisks(*) in response an
     const rawSuggestion =
       geminiRes.data?.candidates?.[0]?.content?.parts?.[0]?.text ||
       "No suggestion found.";
-    console.log("💡 Gemini Suggestion:", rawSuggestion);
+    // console.log("💡 Gemini Suggestion:", rawSuggestion);
 
     // Translate if needed
     let finalSuggestion = rawSuggestion;
@@ -42,7 +42,7 @@ Give suggestions in simple bullet points. (Don't use asterisks(*) in response an
       try {
         const [translated] = await translate.translate(rawSuggestion, language);
         finalSuggestion = translated;
-        console.log("🌐 Translated Suggestion:", finalSuggestion);
+        // console.log("🌐 Translated Suggestion:", finalSuggestion);
       } catch (translateError) {
         console.warn(
           "Translation failed, falling back to English:",

@@ -23,19 +23,23 @@ mongoose
 function startCronJobs() {
   cron.schedule("* * * * *", async () => {
     try {
-      const now = new Date();
+      const date = new Date();
+      date.setMinutes(date.getMinutes() + 330); // 5.5 hours = 330 minutes
 
-      const currentDate = now.toISOString().split("T")[0]; // "YYYY-MM-DD"
+      const updatedTime = date.toTimeString().slice(0, 5); // HH:MM format
+      console.log(updatedTime);
+
+      const currentDate = date.toISOString().split("T")[0]; // "YYYY-MM-DD"
       console.log(currentDate);
-      const currentTime = now.toTimeString().slice(0, 5); // "HH:mm"
-      console.log(currentTime);
-      let currentDay = now.toLocaleString("en-US", { weekday: "long" });
+      // const currentTime = now.toTimeString().slice(0, 5); // "HH:mm"
+      // console.log(currentTime);
+      let currentDay = date.toLocaleString("en-US", { weekday: "long" });
       currentDay = currentDay.slice(0, 3);
       console.log(currentDay);
 
       const medicines = await Medicine.find({
         startDate: currentDate,
-        startTime: currentTime,
+        startTime: updatedTime,
         days: { $in: [currentDay] },
       });
       console.log(medicines);

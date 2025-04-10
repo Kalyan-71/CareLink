@@ -37,5 +37,5 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.listen(process.env.PORT || 5000, () => {
   startCronJobs(); // Start the cron jobs
-  console.log("Server started on port 5000");
+  // console.log("Server started on port 5000");
 });
