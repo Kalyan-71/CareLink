@@ -24,14 +24,14 @@ export default function MedicalReportUploader() {
       formData.append("report", file);
 
       const uploadRes = await axios.post(
-        "http://localhost:5000/api/upload/upload-report",
+        "https://carelink-backend-njjn.onrender.com/api/upload/upload-report",
         formData
       );
       const structuredText = uploadRes.data.extractedText;
 
       // Step 2: Analyze the structured data
       const analyzeRes = await axios.post(
-        "http://localhost:5000/api/analyze/analyze",
+        "https://carelink-backend-njjn.onrender.com/api/analyze/analyze",
         {
           patientId: "fba276e9-6a42-4114-a0a9-bfe71a7966e6", // Static for demo
           extractedText: structuredText,

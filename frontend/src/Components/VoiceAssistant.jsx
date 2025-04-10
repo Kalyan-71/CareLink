@@ -30,7 +30,7 @@ const VoiceAssistant = () => {
       setIsLoading(true);
 
       try {
-        const res = await fetch("http://localhost:5000/api/voice-analyze", {
+        const res = await fetch("https://carelink-backend-njjn.onrender.com/api/voice-analyze", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -71,7 +71,7 @@ const VoiceAssistant = () => {
           lng: position.coords.longitude,
         };
 
-        const res = await fetch("http://localhost:5000/api/hospitals", {
+        const res = await fetch("https://carelink-backend-njjn.onrender.com/api/hospitals", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -97,7 +97,7 @@ const VoiceAssistant = () => {
     setShowHospitals(false);
     setShowDialog(true);
     try {
-      const res = await fetch("http://localhost:5000/api/ai-suggestions", {
+      const res = await fetch("https://carelink-backend-njjn.onrender.com/api/ai-suggestions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

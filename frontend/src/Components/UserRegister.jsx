@@ -23,7 +23,7 @@ export default function UserRegister() {
     };
 
     axios
-      .post("http://localhost:5000/api/auth/register", userData)
+      .post("https://carelink-backend-njjn.onrender.com/api/auth/register", userData)
       .then((response) => {
         console.log(response.data);
         // alert("Registration successful!");

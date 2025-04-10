@@ -50,7 +50,7 @@ export default function Medicine() {
 
   async function fetchMedicineDetails(id) {
     try {
-        const response = await axios.get(`http://localhost:5000/api/healthcare/${id}`);
+        const response = await axios.get(`https://carelink-backend-njjn.onrender.com/api/healthcare/${id}`);
         setMedicineDataToState(response.data);
     } catch (error) {
         console.error("Error fetching medicine details:", error);
@@ -106,7 +106,7 @@ export default function Medicine() {
   // const userId = localStorage.getItem("userId");
   function addMedicine(medicine) {
 
-    axios.post("http://localhost:5000/api/healthcare", medicine, {
+    axios.post("https://carelink-backend-njjn.onrender.com/api/healthcare", medicine, {
           headers: {
             "X-User-Id": localStorage.getItem("userId"), 
           }
@@ -314,34 +314,3 @@ export default function Medicine() {
     </div>
   );
 }
-//   function addMedicine(medicine) {
-//     const method = medicineData?.id ? 'put' : 'post';
-//     const url = medicineData?.id 
-//         ? `http://localhost:8080/api/healthcare/${medicineData.id}`
-//         : "http://localhost:8080/api/healthcare";
-
-//     axios[method](url, medicine)
-//         .then(response => {
-//             console.log("Response Data:", response.data);
-//             navigate("/medicines");
-//         })
-//         .catch(error => console.log(error));
-// }
-
-
-
-
-// put
-
-    // const medicineId = medicineData?.id || id;
-    // const method = medicineId ? 'put' : 'post';
-    // const url = medicineId
-    //     ? `http://localhost:8080/api/healthcare/${medicineId}`
-    //     : "http://localhost:8080/api/healthcare";
-
-    // axios[method](url, medicine, userId)
-    //     .then(response => {
-    //         console.log("Response Data:", response.data);
-    //         navigate("/medicines");
-    //     })
-    //     .catch(error => console.log(error));

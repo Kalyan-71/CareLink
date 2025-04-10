@@ -17,7 +17,7 @@ export default function AllMedicines() {
     function getAllMedicines() {
         setLoading(true);
         setError(null);
-        axios.get(`http://localhost:5000/api/healthcare/${userId}/medicines`)
+        axios.get(`https://carelink-backend-njjn.onrender.com/api/healthcare/${userId}/medicines`)
             .then((response) => {
                 setMedicines(response.data);
                 setLoading(false);

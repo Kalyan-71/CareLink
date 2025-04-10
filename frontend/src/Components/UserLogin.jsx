@@ -21,7 +21,7 @@ export default function UserLogin() {
     };
 
     const res =axios
-    .post("http://localhost:5000/api/auth/login", userData)
+    .post("https://carelink-backend-njjn.onrender.com/api/auth/login", userData)
     .then((response) => {
       console.log(response.data);
       // alert("Login successful!");
